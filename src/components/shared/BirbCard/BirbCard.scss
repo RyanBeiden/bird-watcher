@@ -1,0 +1,44 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.card-container {
+  border-color: none;
+}
+
+.card-body {
+  color: $textColor;
+
+  padding: 0;
+}
+
+.type {
+  @include cardDetails($red);
+  border-top-left-radius: .1em;
+  border-top-right-radius: .1em;
+  
+  font-size: 1.4em;
+}
+
+.location {
+  @include cardDetails($orange);
+}
+
+.seenAt {
+  @include cardDetails($yellow);
+}
+
+.size {
+  @include cardDetails($green);
+}
+
+.wasSleeping {
+  @include cardDetails($blue);
+}
+
+.notes {
+  @include cardDetails($purple);
+}
+
+.view-bird-button {
+  margin: 25px 0px;
+}
