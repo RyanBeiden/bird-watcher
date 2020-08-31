@@ -1,12 +1,22 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
-import utils from '../utils';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const getBirbsByUid = (uid) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/birbs.json?orderBy="uid"&equalTo="${uid}"`)
-    .then(({ data }) => resolve(utils.convertFirebaseCollection(data)))
+    .then((response) => {
+      const allBirbs = response.data;
+      const myBirbs = [];
+
+      if (allBirbs) {
+        Object.keys(allBirbs).forEach((birbId) => {
+          allBirbs[birbId].id = birbId;
+          myBirbs.push(allBirbs[birbId]);
+        });
+      }
+      resolve(myBirbs);
+    })
     .catch((err) => reject(err));
 });
 

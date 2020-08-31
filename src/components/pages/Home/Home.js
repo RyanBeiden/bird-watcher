@@ -14,21 +14,11 @@ class Home extends React.Component {
     birbs: [],
   }
 
-  getBirbs = () => {
+  componentDidMount() {
     birbData.getBirbsByUid(authData.getUid())
       .then((birbs) => this.setState({ birbs }))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error('Could not get all birbs -> ', err));
   }
-
-  componentDidMount() {
-    this.getBirbs();
-  }
-
-  // editBirbEvent = (e) => {
-  //   e.preventDefault();
-  //   const birbId = 'birb10239';
-  //   this.props.history.push(`/edit/${birbId}`);
-  // }
 
   render() {
     const { birbs } = this.state;
