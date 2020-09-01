@@ -3,3 +3,20 @@
   padding: 15px;
   margin: 0px 0px;
 }
+
+@mixin singleBirb($color) {
+  background-color: $color;
+  padding: 30px;
+  margin: 0;
+  color: $textColor;
+  font-size: 1.4em;
+}
+
+@mixin navLinks($color) {
+  font-size: 1.2em;
+  border: 2px solid $color;
+  color: $textColor !important;
+
+  margin: 0px 10px;
+  transition: ease-in 200ms;
+}

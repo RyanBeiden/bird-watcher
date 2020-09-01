@@ -1,0 +1,30 @@
+@import '../../../styles//variables';
+
+.Auth {
+
+
+  margin-top: 200px;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .Auth__sign-in {
+    border-radius: 0;
+    background-color: $green;
+    border: 2px solid #80b980;
+    border-right-width: 1px;
+    border-bottom-left-radius: .2em;
+    color: $textColor;
+    padding: 15px 25px;
+    font-size: 1.4em;
+  }
+  
+  .Auth__sign-in:hover,
+  .Auth__sign-in:focus,
+  .Auth__sign-in:active {
+    background-color: #80b980 !important;
+    border-color: #80b980 !important;
+    color: $textColor !important;
+  }
+}

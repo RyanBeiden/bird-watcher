@@ -15,6 +15,8 @@ import {
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import './MyNavbar.scss';
+
 class MyNavbar extends React.Component {
   static propTypes = {
     authed: PropTypes.bool.isRequired,
@@ -42,15 +44,15 @@ class MyNavbar extends React.Component {
 
       if (authed) {
         return (
-          <Nav className="ml-auto" navbar>
+          <Nav className="ml-auto menu-items" navbar>
             <NavItem>
-              <NavLink tag={RRNavLink} to="/home">Home</NavLink>
+              <NavLink id="home" className="Home-link" tag={RRNavLink} to="/home">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to="/new">New Birb</NavLink>
+              <NavLink id="newBirb" className="NewBirb-link" tag={RRNavLink} to="/new">New Birb</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={this.logMeOut}>Logout</NavLink>
+              <NavLink className="Logout-link" onClick={this.logMeOut}>Logout</NavLink>
             </NavItem>
           </Nav>
         );
@@ -60,13 +62,9 @@ class MyNavbar extends React.Component {
     };
 
     return (
-      // <div className="MyNavbar">
-      //   <h1>My Navbar</h1>
-      //   <button className="btn btn-danger" onClick={this.logMeOut}>Logout</button>
-      // </div>
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Birb Watcher</NavbarBrand>
+        <Navbar className="MyNavbar" color="light" light expand="md">
+          <NavbarBrand className="navbar-title" href="/">Birb Watcher <i className="fab fa-earlybirds"></i></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {buildNavbar()}
