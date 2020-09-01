@@ -10,32 +10,10 @@
   color: $textColor !important;
 }
 
-.fa-earlybirds {
-  color: $purple !important;
-  font-size: 1.3em;
+.bird-image {
+  width: 50px;
 }
 
-.Home-link {
-  @include navLinks($blue);
-}
-
-.Home-link:hover {
-  background-color: $blue;
-}
-
-.NewBirb-link {
-  @include navLinks($green);
-}
-
-.NewBirb-link:hover {
-  background-color: $green;
-}
-
-.Logout-link {
-  @include navLinks($red);
-}
-
-.Logout-link:hover {
-  background-color: $red;
-  cursor: pointer;
+.MyNavbar__link {
+  font-size: 1.2em;
 }
