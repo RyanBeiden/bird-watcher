@@ -2,7 +2,9 @@
 @import '../../../styles/variables';
 
 .card-container {
-  border-color: none;
+  border: none;
+
+  box-shadow: 5px 5px 1px $shadowColor;
 }
 
 .card-body {
@@ -19,26 +21,42 @@
   font-size: 1.4em;
 }
 
-.location {
-  @include cardDetails($orange);
-}
-
-.seenAt {
-  @include cardDetails($yellow);
-}
-
-.size {
-  @include cardDetails($green);
-}
-
-.wasSleeping {
-  @include cardDetails($blue);
-}
-
 .notes {
   @include cardDetails($purple);
 }
 
 .view-bird-button {
-  margin: 25px 0px;
+  width: 200px;
+  border-radius: 0;
+  background-color: $green;
+  border: 2px solid #80b980;
+  border-right-width: 1px;
+  border-bottom-left-radius: .2em;
+  color: $textColor;
+}
+
+.view-bird-button:hover,
+.view-bird-button:focus,
+.view-bird-button:active {
+  background-color: #80b980 !important;
+  border-color: #80b980 !important;
+  color: $textColor !important;
+}
+
+.edit-bird-button {
+  width: 200px;
+  border-radius: 0;
+  background-color: $blue;
+  border: 2px solid #7f9ba7;
+  border-left-width: 1px;
+  border-bottom-right-radius: .2em;
+  color: $textColor;
+}
+
+.edit-bird-button:hover,
+.edit-bird-button:focus,
+.edit-bird-button:active {
+  background-color: #7f9ba7 !important;
+  border-color: #7f9ba7 !important;
+  color: $textColor !important;
 }

@@ -1,9 +1,14 @@
-$backgroundColor: #d0d0d0;
-$textColor: #343434;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-$red: #FF6663;
+$backgroundColor: #d0d0d0;
+$textColor: #3e3e3e;
+$shadowColor: #525252;
+
+$red: #f5817f;
 $orange: #FEB144;
 $yellow: #FDFD97;
 $green: #9EE09E;
 $blue: #9EC1CF;
 $purple: #CC99C9;
+
+$primaryFont: 'Permanent Marker', cursive;

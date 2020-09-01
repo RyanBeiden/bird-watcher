@@ -1,0 +1,37 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.SingleBirb {
+  margin-top: 50px;
+}
+
+.SingleBirb__card {
+  background-color: $backgroundColor !important;
+
+  box-shadow: 5px 5px 1px $shadowColor;
+}
+
+.SingleBirb__type {
+  @include singleBirb($red);
+  font-size: 1.6em;
+}
+
+.SingleBirb__location {
+  @include singleBirb($orange);
+}
+
+.SingleBirb__seenAt {
+  @include singleBirb($yellow);
+}
+
+.SingleBirb__size {
+  @include singleBirb($green);
+}
+
+.SingleBirb__wasSleeping {
+  @include singleBirb($blue);
+}
+
+.SingleBirb__notes {
+  @include singleBirb($purple);
+}

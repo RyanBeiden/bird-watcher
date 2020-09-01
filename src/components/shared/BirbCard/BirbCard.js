@@ -28,8 +28,10 @@ class BirbCard extends React.Component {
           <CardBody className="card-body">
             <CardTitle className="type">{birb.type}</CardTitle>
             {birb.notes.length > 0 ? <CardText className="notes"><em>{birb.notes}</em></CardText> : ''}
-            <Link to={singleBirbLink} className="btn btn-primary view-bird-button">View Bird</Link>
-            <Link to={editLink} className="btn btn-secondary view-bird-button">Edit Bird</Link>
+            <div className="d-flex justify-content-center">
+              <Link to={singleBirbLink} className="btn btn-success view-bird-button">View Birb</Link>
+              <Link to={editLink} className="btn btn-primary edit-bird-button">Edit Birb</Link>
+            </div>
           </CardBody>
         </Card>
       </div>
