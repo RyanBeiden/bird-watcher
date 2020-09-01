@@ -15,9 +15,6 @@ class Home extends React.Component {
     birbData.getBirbsByUid(authData.getUid())
       .then((birbs) => this.setState({ birbs }))
       .catch((err) => console.error('Could not get all birbs -> ', err));
-
-    document.getElementById('newBirb').style.backgroundColor = '';
-    document.getElementById('home').style.backgroundColor = '#9EC1CF';
   }
 
   render() {
@@ -30,6 +27,9 @@ class Home extends React.Component {
         <div className="Home__birb-cards">
           {getBirbCards}
         </div>
+        <footer>
+          Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
       </div>
     );
   }
