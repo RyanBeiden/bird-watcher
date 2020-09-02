@@ -35,3 +35,9 @@
 .SingleBirb__notes {
   @include singleBirb($purple);
 }
+
+.name-border {
+  border: 2px solid $textColor;
+  padding: 10px;
+  border-radius: .2em;
+}
