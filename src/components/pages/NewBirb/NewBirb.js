@@ -15,9 +15,14 @@ class NewBirb extends React.Component {
     size: '',
     seenAt: new Date(),
     altColor: '',
-    wasSleeping: true,
+    wasSleeping: false,
     location: '',
     notes: '',
+  }
+
+  componentDidMount() {
+    document.getElementById('checkbox-status').style.backgroundColor = 'transparent';
+    document.getElementById('checkbox-status').style.borderRight = '2px solid #3e3e3e';
   }
 
   changeTypeEvent = (e) => {
@@ -43,13 +48,12 @@ class NewBirb extends React.Component {
     const checkedStatus = e.target.checked;
 
     if (checkedStatus) {
-      document.getElementById('checkbox-status').style.backgroundColor = '#3e3e3e';
+      document.getElementById('checkbox-status').style.backgroundColor = '#8dd890';
       document.getElementById('checkbox-status').style.color = '#fff';
       this.setState({ wasSleeping: true });
     } else {
       document.getElementById('checkbox-status').style.backgroundColor = 'transparent';
       document.getElementById('checkbox-status').style.borderRight = '2px solid #3e3e3e';
-      document.getElementById('checkbox-status').style.color = '#3e3e3e';
       this.setState({ wasSleeping: false });
     }
   }
@@ -127,7 +131,8 @@ class NewBirb extends React.Component {
               id="birbSleeping"
               defaultChecked={wasSleeping}
               onChange={this.changeSleepingEvent}/>
-            <label className="custom-control-label" id="checkbox-status" htmlFor="birbSleeping">Click if they are awake</label>
+            <p>Sleeping</p>
+            <label className="custom-control-label" id="checkbox-status" htmlFor="birbSleeping"></label>
           </div>
           <div className="form-group">
             <label htmlFor="birbNotes">Notes</label>
