@@ -1,0 +1,101 @@
+@import '../../../styles/variables';
+
+.NewBirb {
+  h2 {
+    margin-top: 25px;
+    font-family: $primaryFont;
+    color: $textColor;
+  }
+
+  .save-birb-button {
+      border-radius: 0;
+      background-color: $green;
+      border: 2px solid #80b980;
+      color: $textColor;
+      padding: 5px 15px;
+  }
+
+  .save-birb-button:hover,
+  .save-birb-button:focus,
+  .save-birb-button:active {
+    background-color: #80b980 !important;
+    border-color: #80b980 !important;
+    color: $textColor !important;
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: stretch;
+  padding: 15px;
+}
+
+label {
+  border: 2px solid $textColor;
+  color: #fff;
+  background-color: $textColor;
+  border-right: none;
+  border-radius: .2em;
+  padding: 10px;
+  margin-top: 2px;
+}
+
+#birbType {
+  background-color: $red;
+
+  padding: 25px;
+}
+
+#birbLocation {
+  background-color: $orange;
+
+  padding: 25px;
+}
+
+.react-datepicker__input-container {
+
+  input {
+    background-color: $purple;
+    color: $textColor !important;
+    padding: 12px;
+    border: none;
+    margin: 2px 0px 0px 1px;
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+}
+
+#birbSize {
+  background-color: $yellow;
+
+  padding: 25px;
+}
+
+#birbSleeping {
+  background-color: $green;
+
+  padding: 25px;
+}
+
+#birbNotes {
+  background-color: $blue;
+
+  padding: 25px;
+}
+
+.custom-checkbox {
+  label::before,
+  label::after {
+    display: none;
+  }
+
+  label {
+    margin: 0px 0px 25px 0px;
+  }
+
+  label:hover {
+    cursor: pointer;
+  }
+}

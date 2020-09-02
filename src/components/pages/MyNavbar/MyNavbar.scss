@@ -3,6 +3,7 @@
 
 .MyNavbar {
   box-shadow: 0px 4px 4px rgb(187, 187, 187);
+  font-family: $primaryFont !important;
 }
 
 .navbar-title {
@@ -16,4 +17,8 @@
 
 .MyNavbar__link {
   font-size: 1.2em;
+}
+
+.MyNavbar__link:hover {
+  cursor: pointer;
 }

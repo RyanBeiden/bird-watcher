@@ -14,7 +14,8 @@
 }
 
 .type {
-  @include cardDetails($red);
+  @include cardDetails(#fff);
+  border: 2px solid $red;
   border-top-left-radius: .1em;
   border-top-right-radius: .1em;
   
@@ -22,7 +23,7 @@
 }
 
 .notes {
-  @include cardDetails($purple);
+  @include cardDetails($red);
 }
 
 .view-bird-button {
@@ -38,8 +39,8 @@
 .view-bird-button:hover,
 .view-bird-button:focus,
 .view-bird-button:active {
-  background-color: #80b980 !important;
-  border-color: #80b980 !important;
+  background-color: #7aaf7a !important;
+  border-color: #7aaf7a !important;
   color: $textColor !important;
 }
 
@@ -56,7 +57,7 @@
 .edit-bird-button:hover,
 .edit-bird-button:focus,
 .edit-bird-button:active {
-  background-color: #7f9ba7 !important;
-  border-color: #7f9ba7 !important;
+  background-color: #73a2e4 !important;
+  border-color: #73a2e4 !important;
   color: $textColor !important;
 }

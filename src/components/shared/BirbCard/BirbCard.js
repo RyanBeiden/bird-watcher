@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 import {
   Card,
@@ -27,7 +28,7 @@ class BirbCard extends React.Component {
         <Card className="m-4 card-container">
           <CardBody className="card-body">
             <CardTitle className="type">{birb.type}</CardTitle>
-            {birb.notes.length > 0 ? <CardText className="notes"><em>{birb.notes}</em></CardText> : ''}
+            <CardText className="notes">Last Seen {moment(birb.seenAt).fromNow()}</CardText>
             <div className="d-flex justify-content-center">
               <Link to={singleBirbLink} className="btn btn-success view-bird-button">View Birb</Link>
               <Link to={editLink} className="btn btn-primary edit-bird-button">Edit Birb</Link>

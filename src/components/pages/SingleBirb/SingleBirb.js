@@ -7,6 +7,7 @@ import {
   CardSubtitle,
 } from 'reactstrap';
 
+import moment from 'moment';
 import birbData from '../../../helpers/data/birbData';
 import './SingleBirb.scss';
 
@@ -30,12 +31,12 @@ class SingleBirb extends React.Component {
       <div className="SingleBirb container">
         <Card className="m-4 SingleBirb__card">
           <CardBody className="card-body">
-            <CardTitle className="SingleBirb__type">{birb.type}</CardTitle>
-            <CardSubtitle className="SingleBirb__location">{birb.location}</CardSubtitle>
-            <CardSubtitle className="SingleBirb__seenAt">{birb.seenAt}</CardSubtitle>
-            <CardSubtitle className="SingleBirb__size">{birb.size}</CardSubtitle>
-            <CardSubtitle className="SingleBirb__wasSleeping">{birb.wasSleeping ? <i className="fas fa-bed"></i> : <i className="fas fa-eye"></i>}</CardSubtitle>
-            <CardText className="SingleBirb__notes"><em>{birb.notes}</em></CardText>
+            <CardTitle className="SingleBirb__type">Type &gt; <span className="name-border">{birb.type}</span></CardTitle>
+            <CardSubtitle className="SingleBirb__location">Location &gt; <span className="name-border">{birb.location}</span></CardSubtitle>
+            <CardSubtitle className="SingleBirb__seenAt">Last seen on &gt; <span className="name-border">{moment(birb.seenAt).format('MMMM Do YYYY, h:mma')}</span></CardSubtitle>
+            <CardSubtitle className="SingleBirb__size">Size &gt; <span className="name-border">{birb.size}</span></CardSubtitle>
+            <CardSubtitle className="SingleBirb__wasSleeping">Sleeping? <span className="name-border">{birb.wasSleeping ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</span></CardSubtitle>
+            <CardText className="SingleBirb__notes">Notes &gt; <span className="name-border"><em>{birb.notes}</em></span></CardText>
           </CardBody>
         </Card>
       </div>
