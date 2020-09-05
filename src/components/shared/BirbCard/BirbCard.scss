@@ -11,6 +11,7 @@
   color: $textColor;
 
   padding: 0;
+  margin: 0;
 }
 
 .type {
@@ -20,6 +21,27 @@
   border-top-right-radius: .1em;
   
   font-size: 1.4em;
+}
+
+.delete-icon {
+  position: absolute;
+  left: 4%;
+  top: 8%;
+
+  font-size: .9em;
+  color: #e0254a;
+  background: transparent;
+  border: none;
+
+  padding: 0;
+}
+
+.delete-icon:hover,
+.delete-icon:focus,
+.delete-icon:active {
+  color: #b81d3c !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 .notes {
