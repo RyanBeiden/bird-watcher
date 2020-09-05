@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
@@ -14,14 +15,28 @@ import birbShape from '../../../helpers/props/birbShape';
 import './BirbCard.scss';
 
 class BirbCard extends React.Component {
+  state = {
+    editBirb: {},
+  }
+
+  componentDidMount() {
+    const { birb } = this.props;
+    this.setState({ editBirb: birb });
+  }
+
   static propTypes = {
     birb: birbShape.birbShape,
+    deleteBirbCard: PropTypes.func.isRequired,
   }
 
   deleteBirbEvent = (e) => {
     e.preventDefault();
     const { deleteBirbCard, birb } = this.props;
     deleteBirbCard(birb.id);
+  }
+
+  editABirb = (birbToEdit) => {
+    this.setState({ editBirb: birbToEdit });
   }
 
   render() {
@@ -39,8 +54,8 @@ class BirbCard extends React.Component {
             </CardTitle>
             <CardText className="notes">Last Seen {moment(birb.seenAt).fromNow()}</CardText>
             <div className="d-flex justify-content-center">
-              <Link to={singleBirbLink} className="btn btn-success view-bird-button">View Birb</Link>
-              <Link to={editLink} className="btn btn-primary edit-bird-button">Edit Birb</Link>
+              <Link to={singleBirbLink} className="btn btn-success view-bird-button"><i className="fas fa-eye"></i></Link>
+              <Link to={editLink} className="btn btn-primary edit-bird-button"><i className="fas fa-edit"></i></Link>
             </div>
           </CardBody>
         </Card>
