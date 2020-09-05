@@ -7,6 +7,7 @@ import {
   CardText,
   CardBody,
   CardTitle,
+  Button,
 } from 'reactstrap';
 
 import birbShape from '../../../helpers/props/birbShape';
@@ -15,6 +16,12 @@ import './BirbCard.scss';
 class BirbCard extends React.Component {
   static propTypes = {
     birb: birbShape.birbShape,
+  }
+
+  deleteBirbEvent = (e) => {
+    e.preventDefault();
+    const { deleteBirbCard, birb } = this.props;
+    deleteBirbCard(birb.id);
   }
 
   render() {
@@ -27,7 +34,9 @@ class BirbCard extends React.Component {
       <div className="BirbCard">
         <Card className="m-4 card-container">
           <CardBody className="card-body">
-            <CardTitle className="type">{birb.type}</CardTitle>
+            <CardTitle className="type">{birb.type}
+              <Button className="btm btn-danger delete-icon" onClick={this.deleteBirbEvent}><i className="fas fa-trash-alt"></i></Button>
+            </CardTitle>
             <CardText className="notes">Last Seen {moment(birb.seenAt).fromNow()}</CardText>
             <div className="d-flex justify-content-center">
               <Link to={singleBirbLink} className="btn btn-success view-bird-button">View Birb</Link>
